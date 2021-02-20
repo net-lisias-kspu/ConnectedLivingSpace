@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0322: 1.2.0.2 (Papa Joe) for KSP 1.0.5
+	+ release v1.2.0.2, 21 Mar, 2016
+		- New:  Added Changes to configurations based on conversations in forums and a Pull Requests by Technologicat, khr15714n &  Kerbas-ad-astra.
+		- Fixed:  Correct build deploy automation to project (missing icons for blizzy).
+		- Fixed:  CLS tweakables incorrectly visible when custom passability is disabled.
 * 2015-1203: 1.2.0.1 (Papa Joe) for KSP 1.0.5
 	+ release v1.2.0.1
 		- Add build deploy automation to project.
