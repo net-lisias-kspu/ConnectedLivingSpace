@@ -1,5 +1,11 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0528: 1.2.1.3 (Papa Joe) for KSP 1.1.2
+	+ release v 1.2.1.3
+		- New:  Changed behavior of CLSClient.cs (API wrapper class) to prevent additional assembly scans when called. Ref Git Issue #72.
+		- New:  Added new configs for Taurus HCV.  Git Issue #71
+		- New:  Added config changes for KOSMOS SSPP  Git Issue #69
+		- New:  Refactoring for KSP 1.1.2 (WIP)
 * 2016-0520: 1.2.1.2 (Papa Joe) for KSP 1.1.2
 	+ release v 1.2.1.2
 		- Fixed:  WHen a Stock Crew transfer is overridden, the override message is not properly displayed.
