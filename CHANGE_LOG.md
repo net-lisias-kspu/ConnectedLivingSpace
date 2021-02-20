@@ -1,5 +1,9 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0515: 1.2.1.1 (Papa Joe) for KSP 1.1.2
+	+ release v 1.2.1.1
+		- Fixed:  Null reference errors.
+		- Fixed:  Window would not open
 * 2016-0512: 1.2.1.0 (Papa Joe) for KSP 1.1.2
 	+ release v 1.2.1.0
 		- New:  Updated mod for KSP 1.1.2 compatibility.
