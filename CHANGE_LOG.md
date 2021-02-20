@@ -1,5 +1,9 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2015-1203: 1.2.0.1 (Papa Joe) for KSP 1.0.5
+	+ release v1.2.0.1
+		- Add build deploy automation to project.
+		- Correct deploy error resulting in incorrect dll build being released.
 * 2015-1120: 1.2.0.0 (Papa Joe) for KSP 1.0.2
 	+ release v1.2.0.0
 		- Added Editor-based tweakables to allow passability customization of a part during vessel construction. Off by default. (Original CLS behavior)
