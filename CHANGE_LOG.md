@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-1023: 1.0.10.0 (CodePoet) for KSP 0.25
+	+ release v1.0.10.0
+		- Add CLS support to stock transfers
+		- Fixed a problem of unconfigured parts with crewspace not being considered passable
+		- Removed Near Future config which is now shipped with Near Future
 * 2014-1011: 1.0.9.0 (CodePoet) for KSP 0.25
 	+ built against KSP 0.25
 	+ Added config for the new Mk spaceplane parts added to stock by porkjet.
