@@ -1,5 +1,9 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0605: 1.2.1.4 (Papa Joe) for KSP 1.1.2
+	+ release v 1.2.1.4
+		- Fixed:  NullRef exceptions when RemoteTech is installed.
+		- New:  Moved configuration file from GameData root folder to GameData\ConnectedLivingSpace\Plugins\PluginData folder to comply with KSP folder standards for mods.
 * 2016-0528: 1.2.1.3 (Papa Joe) for KSP 1.1.2
 	+ release v 1.2.1.3
 		- New:  Changed behavior of CLSClient.cs (API wrapper class) to prevent additional assembly scans when called. Ref Git Issue #72.
