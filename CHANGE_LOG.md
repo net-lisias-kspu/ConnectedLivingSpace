@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2015-0519: 1.1.3.0 (Papa Joe) for KSP 1.0.2
+	+ Added trigger to overcome bug in KSP 1.0.2 that prevents stock toolbar icon from displaying.
+	+ Added Blizzy Toolbar support with hot switching between stock and blizzy toolbars.
+	+ Added support for KSP-AVC (if installed).
+	+ Fixed a bug in OnVesselLoad to ensure only the active vessel is loaded into CLS.
 * 2015-0206: 1.1.1.0 (Papa Joe) for KSP 0.90
 	+ Changes to enable third party hatch control and made highlighting more co-operative.
 * 2014-1225: 1.1.0.0 (Papa Joe) for KSP 0.90
