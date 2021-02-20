@@ -1,5 +1,7 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-1225: 1.1.0.0 (CodePoet) for KSP 0.90
+	+ updated to be compatible with KSP 0.90
 * 2014-1027: 1.0.11.0 (CodePoet) for KSP 0.25
 	+ release v1.0.11.0
 		- Fixed a bug in the stock transfer code that meant it only worked for the first vessel.
