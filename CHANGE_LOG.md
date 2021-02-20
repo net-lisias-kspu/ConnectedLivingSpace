@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2015-0620: 1.1.3.1 (Papa Joe) for KSP 1.0.2
+	+ release v1.1.3.1
+		- Changed Unrestricted Crew Transfers option to be available when no vessel is loaded in VAB/SPH
+		- Fixed a bug in the Use Blizzy's Toolbar option to disable the option when Blizzy's Toolbar is not installed.
+		- Added Freedom Alt Stock MM config changes.
 * 2015-0519: 1.1.3.0 (Papa Joe) for KSP 1.0.2
 	+ Added trigger to overcome bug in KSP 1.0.2 that prevents stock toolbar icon from displaying.
 	+ Added Blizzy Toolbar support with hot switching between stock and blizzy toolbars.
