@@ -1,5 +1,8 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2017-0601: 1.2.5.2 (Papa Joe) for KSP 1.3.0
+	+ release v 1.2.5.2 release date: 31 May 2017
+		- New:  Added compatibility with Airlock Plus. (thanks to cakepie!)
 * 2017-0529: 1.2.5.1 (Papa Joe) for KSP 1.3.0
 	+ release v 1.2.5.1 release date: 29 May 2017
 		- New: Added support for Recoupler.  Modders can now request to merge spaces on reconnect of parts.
