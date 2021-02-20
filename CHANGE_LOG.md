@@ -1,5 +1,13 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0826: 1.2.3.0 (Papa Joe) for KSP 1.1.3
+	+ release v 1.2.3.0
+		- New:  Added support for intercepting Parts selection list during stock Transfer target part selection.  A part not in the same space will be unselectable and is highlighted orange like full parts.
+		- New:  Added support for overriding the "Allow unrestricted Crew Transfers"in CLSInterfaces.dll setting via other Mods to prevent "competition" between mods when handling stock crew transfers.
+		- New:  Updated config for Docking Port Jr.  Squad now says that a kerbal can squeeze thru.
+		- New:  Refactored code to improve performance, recuce garbage collection, & use Explicit typing.
+		- Fixed: CLS windows now properly close when changing scenes.
+		- Fixed: In the Editor, part highlighting does not work correctly when adding new crewable parts.
 * 2016-0724: 1.2.2.1 (Papa Joe) for KSP 1.1.3
 	+ release v 1.2.2.1
 		- Fixed:  Stock Crew Transfer fails for "not in same space" even when the 2 parts are in the same space.
