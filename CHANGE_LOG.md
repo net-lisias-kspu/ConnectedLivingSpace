@@ -1,5 +1,12 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-0731: 1.0.8.0 (CodePoet) for KSP 0.24.2
+	+ release v1.0.8.0
+		- Built against KSP 0.24.2
+		- Updated build process to use zip utilities installed on 64 bit OS
+		- Changed to use the stock toolbar, and removed the dependency on blizzy's toolbar.
+		- Improved the configuration documentation, and made it easier to find (in the mod root directory)
+		- Fixed issue with the descriptions of the parts in the VAB/SPH
 * 2014-0627: 1.0.7.0 (CodePoet) for KSP 0.23.5
 	+ Added support for the FASA parts pack
 	+ removed the config for Porkworks habitat part pack as this will be shipped with the habitate pack in the future.
