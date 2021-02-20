@@ -1,5 +1,13 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2020-0309: 2.0.0.3 (Micha) for KSP 1.9.1
+	+ Version 2.0.0.3 - Release 04 Mar 2020 - KSP 1.9.1
+		- New: recompiled for KSP 1.9.1 and DotNet4.5
+			- NOTE: This version is incompatible with versions of KSP before 1.8.
+		- Changed: new maintainer, *Micha*.
+		- New: Added german translation.
+		- Changed: reworked distribution scripts on Windows and repository layout (maintainers take note)
+		- Fixed: incorporate PR #105 from *taniwha* with many fixes and improvements.
 * 2018-0613: 1.2.6.2 (Papa Joe) for KSP 1.4.5
 	+ release v1.2.6.2 release date:  13 Jun 2018
 		- recompiled for 1.4.3
