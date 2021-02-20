@@ -1,5 +1,7 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-1225: 1.1.0.0 (Papa Joe) for KSP 0.90
+	+ updated to be compatible with KSP 0.90
 * 2015-0206: 1.1.1.0 (CodePoet) for KSP 0.90
 	+ Changes to enable third party hatch control and made highlighting more co-operative.
 * 2014-1225: 1.1.0.0 (CodePoet) for KSP 0.90
