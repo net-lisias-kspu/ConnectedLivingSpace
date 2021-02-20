@@ -1,5 +1,8 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0512: 1.2.1.0 (Papa Joe) for KSP 1.1.2
+	+ release v 1.2.1.0
+		- New:  Updated mod for KSP 1.1.2 compatibility.
 * 2016-0414: 1.2.0.9 (Papa Joe) for KSP 1.1 PRE-RELEASE
 	+ prerelease v 1.2.0.9
 		- New:  Updated mod for KSP 1.1 compatibility.
