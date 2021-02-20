@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-0627: 1.0.7.0 (CodePoet) for KSP 0.23.5
+	+ Added support for the FASA parts pack
+	+ removed the config for Porkworks habitat part pack as this will be shipped with the habitate pack in the future.
+	+ Fixed bug whe
+	+ re root part is deleted in the editor.
 * 2014-0609: 1.0.6.0 (CodePoet) for KSP 0.23.5
 	+ Added support for the Novapunch parts pack
 	+ Fixed the bug of the hatch status not being saved and loaded properly.
