@@ -1,5 +1,12 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0130: 1.2.5.7 (Papa Joe) for KSP 1.3.1
+	+ release v1.2.5.7 release date:  30 Jan 2018
+		- Changed:  Color for "No" response in information displays changed from Maroon to OrangeRed to improve readability (contrast)
+		- Fixed: Blizzy's Toolbar wrapper needs updating.  Git Issue #77
+		- Fixed: Vessel data is not updated when creating/modifying/deleting a vessel in the Vessel Editor.  Git Issue #85
+		- Fixed: Passable strings reversed. Git Issue #92. (thanks to @yalov!)
+		- Fixed: Hatch status reporting error in tweakable. Git Issue #93.
 * 2018-0129: 1.2.5.6 (Papa Joe) for KSP 1.3.1
 	+ release v1.2.5.6 release date:  29 Jan 2018
 		- Correct errors in config files for Mod version, and KSP version supported.
