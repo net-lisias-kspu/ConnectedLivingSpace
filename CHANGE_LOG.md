@@ -1,5 +1,14 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-1230: 1.2.4.0 (Papa Joe) for KSP 1.2.2
+	+ release v 1.2.4.0
+		- New:  Refactored to support KSP 1.2.2.
+		- New:  Completely refactored method used to Add hatches to vessels.  Now utilizes a module manager config, eliminating prefab manipulation in game.
+		- New:  Code refactored to improve performance and garbage collection.
+		- Fixed: Some parts containing ModuleDockingNode without a referenceNodeName would be rendered impassable in some nodes.
+		- Fixed: NRE generated during Vessel load. The addition of a female kerbal broke the CLS Module attachment code when a vessel is loaded at Flight.
+			- (This was a old undetected bug, that may explain some parts not showing as passble)
+		- Fixed: Spammed Index out of range error during space changes while CLS Window is opened.
 * 2016-0826: 1.2.3.0 (Papa Joe) for KSP 1.1.3
 	+ release v 1.2.3.0
 		- New:  Added support for intercepting Parts selection list during stock Transfer target part selection.  A part not in the same space will be unselectable and is highlighted orange like full parts.
