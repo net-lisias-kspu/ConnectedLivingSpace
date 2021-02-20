@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0614: 1.2.1.5 (Papa Joe) for KSP 1.1.3
+	+ release v 1.2.1.5
+		- Fixed:  Finally squashed NullRef exceptions when RemoteTech is installed.
+		- New:  Added Distribution folder to project for ease in locating binaries from Git.
+		- New:  Added folder check for PluginData to ensure proper config file creation when Mod is installed.
 * 2016-0605: 1.2.1.4 (Papa Joe) for KSP 1.1.2
 	+ release v 1.2.1.4
 		- Fixed:  NullRef exceptions when RemoteTech is installed.
