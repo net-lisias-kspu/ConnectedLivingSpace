@@ -1,5 +1,7 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2017-0603: 1.2.5.3a (Papa Joe) for KSP 1.3.0
+	+ Forgot a merge.  all other release notes are the same as last release
 * 2017-0601: 1.2.5.2 (Papa Joe) for KSP 1.3.0
 	+ release v 1.2.5.2 release date: 31 May 2017
 		- New:  Added compatibility with Airlock Plus. (thanks to cakepie!)
