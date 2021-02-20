@@ -1,5 +1,8 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0724: 1.2.2.1 (Papa Joe) for KSP 1.1.3
+	+ release v 1.2.2.1
+		- Fixed:  Stock Crew Transfer fails for "not in same space" even when the 2 parts are in the same space.
 * 2016-0707: 1.2.2.0 (Papa Joe) for KSP 1.1.3
 	+ release v 1.2.2.0
 		- New:  Refactored Stock Crew Transfer Handler to use new KSP 1.1.3 events to pre-empt the transfer if disallowd by CLS.
