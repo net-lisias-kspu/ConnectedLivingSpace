@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0410: 1.2.6.1 (Papa Joe) for KSP 1.4.2
+	+ release v1.2.6.1 release date:  09 Apr 2018
+		- Made solution structural changes to ensure improved multi developer support and distribution.  Reorganized / cleaned up solution folders
+		- Added missing configs configs to CLSStockFreedomAddon.txt per PR97 by wookieegoldberg, Thanks wookie!
+		- this updates some renamed parts, and adds some Making history parts.
 * 2018-0409: 1.2.6.0 (Papa Joe) for KSP 1.4.2
 	+ release v1.2.6.0 release date:  09 Apr 2018
 		- Added configs for new Mk1-3 pod to base CLSStock.cfg
