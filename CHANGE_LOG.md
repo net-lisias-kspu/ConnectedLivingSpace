@@ -1,5 +1,9 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-0520: 1.2.1.2 (Papa Joe) for KSP 1.1.2
+	+ release v 1.2.1.2
+		- Fixed:  WHen a Stock Crew transfer is overridden, the override message is not properly displayed.
+		- Fixed:  WHen a Stock Crew transfer is overridden, the original move message is not properly removed.
 * 2016-0515: 1.2.1.1 (Papa Joe) for KSP 1.1.2
 	+ release v 1.2.1.1
 		- Fixed:  Null reference errors.
