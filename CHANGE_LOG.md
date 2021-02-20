@@ -1,5 +1,10 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0318: 1.2.5.8 (Papa Joe) for KSP 1.4.1
+	+ release v1.2.5.8 release date:  xx Mar 2018
+		- New: Recompiled for KSP 1.4.x
+		- Fixed: CLS ApplicationLauncher Button is blurry in KSP 1.4 update.  Updated textures to 128x128 px. Git issue #95.
+		- Added back in Recoupler support.  Previous PR#83 accidently removed it.  Merged PR#94.  Git issue #83.
 * 2018-0130: 1.2.5.7 (Papa Joe) for KSP 1.3.1
 	+ release v1.2.5.7 release date:  30 Jan 2018
 		- Changed:  Color for "No" response in information displays changed from Maroon to OrangeRed to improve readability (contrast)
