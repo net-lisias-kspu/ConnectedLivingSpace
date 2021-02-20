@@ -1,5 +1,11 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0409: 1.2.6.0 (Papa Joe) for KSP 1.4.2
+	+ release v1.2.6.0 release date:  09 Apr 2018
+		- Added configs for new Mk1-3 pod to base CLSStock.cfg
+		- Added configs for Making History Expansion
+		- Added configs to CLSStockFreedomAddon.txt per PR97 by wookieegoldberg, Thanks wookie!
+		- this updates some renamed parts, and adds some Making history parts.
 * 2018-0318: 1.2.5.8 (Papa Joe) for KSP 1.4.1
 	+ release v1.2.5.8 release date:  xx Mar 2018
 		- New: Recompiled for KSP 1.4.x
