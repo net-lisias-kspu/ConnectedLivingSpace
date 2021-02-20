@@ -1,0 +1,2 @@
+# ConnectedLivingSpace :: Change Log
+
