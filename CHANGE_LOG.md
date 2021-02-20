@@ -1,5 +1,20 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0103: 1.2.5.5 (Papa Joe) for KSP 1.3.1
+	+ New official release Incorporating changes by linuxgurugamer during my absence.
+		- 1.2.5.4 beta by linuxgurugamer, released under permission.
+		- 1.2.5.5 beta by linuxgurugamer, also released under permission.  for these 2 releases go to his git repository.
+	+ release v1.2.5.5 (official) release date: 03 Jan 2018
+				- New: PR from linuxgurugamer for an Updated CLSB9.cfg: Thanks to @Mine_Turtle:
+			- linuxgurugamer has added CDP docking port(supposed to be used with s2 parts) to the
+			- list and made s2 crew parts passable, when surface attached. Reason: there
+			- is no inline s2 docking adapter, nor it is possible to attach stock
+			- docking ports to s2 modules and have crew transfers with CLS.
+	+ release v1.2.5.4 release date: 28 Oct 2017 (beta by linuxgurugamer)
+				- New: Merged PR from @tyehle:	Make kibble storage passable. Fixes #87
+				- New: Merged PR from @yalov: Localizations
+				- New: Merged PR from @cake-pie: Refactor
+				- New: Merged PR from @kerbas-ad-astra: Some new part configs
 * 2017-0603: 1.2.5.3a (Papa Joe) for KSP 1.3.0
 	+ Forgot a merge.  all other release notes are the same as last release
 * 2017-0601: 1.2.5.2 (Papa Joe) for KSP 1.3.0
