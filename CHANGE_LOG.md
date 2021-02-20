@@ -1,5 +1,12 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2015-1120: 1.2.0.0 (Papa Joe) for KSP 1.0.2
+	+ release v1.2.0.0
+		- Added Editor-based tweakables to allow passability customization of a part during vessel construction. Off by default. (Original CLS behavior)
+		- Added option to enable / disable parts not originally passable.
+		- Expand and reformat parameter info in the RMB of the editor part description dialog.
+		- Added options window and moved options out of CLS window.
+		- Fixed bug with turning off Blizzy toolbar icon in Editor.
 * 2015-0620: 1.1.3.1 (Papa Joe) for KSP 1.0.2
 	+ release v1.1.3.1
 		- Changed Unrestricted Crew Transfers option to be available when no vessel is loaded in VAB/SPH
