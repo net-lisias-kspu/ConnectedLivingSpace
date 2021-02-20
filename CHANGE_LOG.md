@@ -1,5 +1,8 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2018-0129: 1.2.5.6 (Papa Joe) for KSP 1.3.1
+	+ release v1.2.5.6 release date:  29 Jan 2018
+		- Correct errors in config files for Mod version, and KSP version supported.
 * 2018-0103: 1.2.5.5 (Papa Joe) for KSP 1.3.1
 	+ New official release Incorporating changes by linuxgurugamer during my absence.
 		- 1.2.5.4 beta by linuxgurugamer, released under permission.
