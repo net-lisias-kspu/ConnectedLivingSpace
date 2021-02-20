@@ -1,5 +1,11 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2020-0614: 2.0.0.5 (Micha) for KSP 1.10.1
+	+ Version 2.0.0.5 - Release 15 Jun 2020 - KSP 1.9.1
+		- Changed: Mk2 pod top hatch now passable (*evanrinehart*).
+		- Changed: 1.25m to 0.625m adapters now passable.
+		- Changed: StationScience Cyclotron and Spectrometer modules no longer passable (by mod author request).
+		- Fixed: Highlighting when hatches are opened or closed.
 * 2020-0505: 2.0.0.4 (Micha) for KSP 1.9.1
 	+ Version 2.0.0.4 - Release 05 May 2020 - KSP 1.9.1
 		- Added Chinese localization (thanks to *Li-Zongyao*)
