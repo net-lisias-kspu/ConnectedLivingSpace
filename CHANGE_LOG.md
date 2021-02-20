@@ -1,5 +1,17 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2014-1011: 1.0.9.0 (CodePoet) for KSP 0.25
+	+ built against KSP 0.25
+	+ Added config for the new Mk spaceplane parts added to stock by porkjet.
+	+ Added config for Near Future Spacecraft mod.
+	+ Added config for Better Science mod
+	+ Added config for Coffee Industries mod
+	+ Added config for Hawkspeed Airstairs mod
+	+ Added config for IXS mod
+	+ Added config for KAX mod
+	+ Added config for mk3 Nazari mod
+	+ Added config for SH mod
+	+ Added config for TT mod
 * 2014-0731: 1.0.8.0 (CodePoet) for KSP 0.24.2
 	+ release v1.0.8.0
 		- Built against KSP 0.24.2
