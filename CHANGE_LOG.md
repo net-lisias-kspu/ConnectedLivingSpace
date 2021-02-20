@@ -1,5 +1,9 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2016-1231: 1.2.4.1 (Papa Joe) for KSP 1.2.2
+	+ release v 1.2.4.1
+		- Fixed: Some parts were not merging spaces event when hatches were opened. Github Issue #75. Forum Post: http://forum.kerbalspaceprogram.com/index.php?/topic/109972-122-connected-living-space-v1240-30-dec-2016-customize-your-cls-parts/&do=findComment&comment=2906269
+		- Fixed: CLSDefaultPart.cfg was included in distribution.  There should only be a CLSDefaultPart.cfg.txt file.  Removed.  Github Issue #78.
 * 2016-1230: 1.2.4.0 (Papa Joe) for KSP 1.2.2
 	+ release v 1.2.4.0
 		- New:  Refactored to support KSP 1.2.2.
