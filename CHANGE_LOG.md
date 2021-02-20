@@ -1,5 +1,11 @@
 # ConnectedLivingSpace :: Change Log
 
+* 2017-0528: 1.2.5.0 (Papa Joe) for KSP 1.3.0
+	+ release v 1.2.5.0
+		- New: Refactored to support KSP 1.3
+		- New: Implemented Localization system.  Now it is possible to translate CLS into other languages. English included to start.
+		- New: Revised Crew and part display window for spaces.  now takes less real estate, and is more intuitive.
+		- New: Revised Space selection buttons to make it easier to tell which space is selected. Now buttons toggle to allow deselection of a space.
 * 2017-0117: 1.2.4.2 (Papa Joe) for KSP 1.2.2
 	+ release v 1.2.4.2
 		- New: Added a custom event to notify mods that the CLS vessel data has been refreshed.
