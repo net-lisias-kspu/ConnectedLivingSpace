@@ -79,6 +79,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Assets.cs" />
+    <Compile Include="ModuleManagerSupport.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
