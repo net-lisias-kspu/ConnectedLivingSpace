@@ -563,7 +563,8 @@ namespace ConnectedLivingSpace
           DummyVoid,
           DummyVoid,
           ApplicationLauncher.AppScenes.VAB | ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.FLIGHT,
-          GameDatabase.Instance.GetTexture("ConnectedLivingSpace/assets/cls_icon_off_128", false));
+          Assets.cls_icon_off_128
+          );
     }
 
     void OnGUIAppLauncherDestroyed()
@@ -584,9 +585,9 @@ namespace ConnectedLivingSpace
         _vessel.Highlight(false);
 
       if (EnableBlizzyToolbar)
-        BlizzyToolbarButton.TexturePath = WindowVisable ? "ConnectedLivingSpace/assets/cls_b_icon_on" : "ConnectedLivingSpace/assets/cls_b_icon_off";
+        BlizzyToolbarButton.TexturePath = WindowVisable ? Assets.cls_b_icon_on : Assets.cls_b_icon_off;
       else
-        _stockToolbarButton.SetTexture(GameDatabase.Instance.GetTexture(WindowVisable ? "ConnectedLivingSpace/assets/cls_icon_on_128" : "ConnectedLivingSpace/assets/cls_icon_off_128", false));
+        _stockToolbarButton.SetTexture(WindowVisable ? Assets.cls_icon_on_128 : Assets.cls_icon_off_128);
     }
 
     internal bool ActivateBlizzyToolBar()
@@ -597,7 +598,7 @@ namespace ConnectedLivingSpace
         if (!ToolbarManager.ToolbarAvailable) return false;
         if (HighLogic.LoadedScene != GameScenes.EDITOR && HighLogic.LoadedScene != GameScenes.FLIGHT) return true;
         BlizzyToolbarButton = ToolbarManager.Instance.add("ConnectedLivingSpace", "ConnectedLivingSpace");
-        BlizzyToolbarButton.TexturePath = "ConnectedLivingSpace/assets/cls_b_icon_on";
+        BlizzyToolbarButton.TexturePath = Assets.cls_b_icon_on;
         BlizzyToolbarButton.ToolTip = _clsLocTitle; // "Connected Living Space";
         BlizzyToolbarButton.Visible = true;
         BlizzyToolbarButton.OnClick += (e) =>
