@@ -49,7 +49,7 @@ namespace ConnectedLivingSpace
       }
       catch (Exception ex)
       {
-        Debug.LogException(ex);
+        Log.error(ex, this);
       }
     }
 
@@ -64,7 +64,7 @@ namespace ConnectedLivingSpace
     /// </summary>
     public override void OnStart(StartState state)
     {
-      //Debug.Log($"[CLS]:  CLS::OnStart state={state}");
+      Log.dbg("CLS::OnStart state={0}", state);
 
       try
       {
@@ -85,7 +85,7 @@ namespace ConnectedLivingSpace
       }
       catch (Exception ex)
       {
-        Debug.LogException(ex);
+        Log.error(ex, this);
       }
     }
 

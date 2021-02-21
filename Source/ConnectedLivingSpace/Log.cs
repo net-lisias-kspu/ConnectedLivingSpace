@@ -42,6 +42,11 @@ namespace ConnectedLivingSpace
       log.error(msg, @params);
     }
 
+    internal static void error(Exception e, string msg, params object[] @params)
+    {
+      log.error(e, msg, @params);
+    }
+
     [ConditionalAttribute("DEBUG")]
     internal static void dbg(string msg, params object[] @params)
     {

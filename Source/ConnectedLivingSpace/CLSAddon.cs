@@ -166,7 +166,7 @@ namespace ConnectedLivingSpace
     #region Life Cycle
     public void Awake()
     {
-      //Debug.Log("CLSAddon:Awake");
+      Log.dbg("CLSAddon:Awake");
       CacheClsLocalization();
       SetLocalization();
       // Added support for Blizzy Toolbar and hot switching between Stock and Blizzy
@@ -174,17 +174,17 @@ namespace ConnectedLivingSpace
       if (EnableBlizzyToolbar)
       {
         // Let't try to use Blizzy's toolbar
-        //Debug.Log("CLSAddon.Awake - Blizzy Toolbar Selected.");
+        Log.dbg("CLSAddon.Awake - Blizzy Toolbar Selected.");
         if (ActivateBlizzyToolBar()) return;
         // We failed to activate the toolbar, so revert to stock
-        //Debug.Log("CLSAddon.Awake - Stock Toolbar Selected.");
+        Log.dbg("CLSAddon.Awake - Stock Toolbar Selected.");
         GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
         GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
       }
       else
       {
         // Use stock Toolbar
-        //Debug.Log("CLSAddon.Awake - Stock Toolbar Selected.");
+        Log.dbg("CLSAddon.Awake - Stock Toolbar Selected.");
         GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
         GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
       }
@@ -192,7 +192,7 @@ namespace ConnectedLivingSpace
 
     public void Start()
     {
-      // Debug.Log("CLSAddon:Start");
+      Log.dbg("CLSAddon:Start");
       _settingsPath = $"{KSPUtil.ApplicationRootPath}GameData/ConnectedLivingSpace/Plugins/PluginData";
       _settingsFile = $"{_settingsPath}/cls_settings.dat";
 
@@ -235,14 +235,14 @@ namespace ConnectedLivingSpace
 
     public void Update()
     {
-      // Debug.Log("CLSAddon:Update");
+      Log.dbgOnce("CLSAddon:Update");
       if (HighLogic.LoadedSceneIsEditor || HighLogic.LoadedSceneIsFlight)
         CheckForToolbarTypeToggle();
     }
 
     public void OnDestroy()
     {
-      //Debug.Log("CLSAddon::OnDestroy");
+      Log.dbg("CLSAddon::OnDestroy");
 
       _allowUnrestrictedTransfers = _backupAllowUnrestrictedTransfers;
       saveSettings();
@@ -336,7 +336,7 @@ namespace ConnectedLivingSpace
     private void OnEditorShipModified(ShipConstruct vesselConstruct)
     {
       if (vesselConstruct.Parts.Count == _editorPartCount) return;
-      //Debug.Log("Calling RebuildCLSVessel as the part count has changed in the editor");
+      Log.dbg("Calling RebuildCLSVessel as the part count has changed in the editor");
 
       UpdateShipConstruct();
 
@@ -386,7 +386,7 @@ namespace ConnectedLivingSpace
       }
       catch (Exception ex)
       {
-        Debug.Log($"CLS rebuild Vessel Error:  { ex}");
+        Log.error(ex, "rebuild Vessel Error");
       }
     }
 
@@ -577,7 +577,7 @@ namespace ConnectedLivingSpace
 
     internal void OnCLSButtonToggle()
     {
-      //Debug.Log("CLSAddon::OnCLSButtonToggle");
+      Log.dbg("CLSAddon::OnCLSButtonToggle");
       WindowVisable = !WindowVisable;
 
       if (!WindowVisable && null != _vessel)
@@ -732,15 +732,15 @@ namespace ConnectedLivingSpace
         {
           if (parts.Current.name.Contains("kerbalEVA"))
           {
-            // Debug.Log("No CLS required for KerbalEVA!");
+            Log.dbg("No CLS required for KerbalEVA!");
           }
           else
           {
-            //Debug.Log($"Adding ConnectedLivingSpace Support to {part.name}/{prefabPart.partInfo.title}");
+            Log.dbg("Adding ConnectedLivingSpace Support to {0}/{1}", parts.Current.name, parts.Current.partPrefab.partInfo.title);
 
             if (!parts.Current.partPrefab.Modules.Contains("ModuleConnectedLivingSpace"))
             {
-              //Debug.Log("The ModuleConnectedLivingSpace is missing!");
+              Log.dbg("The ModuleConnectedLivingSpace is missing!");
 
               ConfigNode node = new ConfigNode("MODULE");
               node.AddValue("name", "ModuleConnectedLivingSpace");
@@ -755,13 +755,13 @@ namespace ConnectedLivingSpace
             }
             else
             {
-              // Debug.Log("The ModuleConnectedLivingSpace is already there.");
+              Log.dbg("The ModuleConnectedLivingSpace is already there.");
             }
           }
         }
         catch (Exception ex)
         {
-          Debug.LogException(ex);
+          Log.error(ex, this);
         }
       }
       parts.Dispose();
@@ -970,7 +970,7 @@ namespace ConnectedLivingSpace
       }
       catch (Exception ex)
       {
-        Debug.LogException(ex);
+        Log.error(ex, this);
       }
     }
 

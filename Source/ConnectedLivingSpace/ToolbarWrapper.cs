@@ -273,7 +273,7 @@ namespace ConnectedLivingSpace
     /// <code>
     /// IButton button = ...
     /// button.OnClick += (e) => {
-    ///     Debug.Log("button clicked, mouseButton: " + e.MouseButton);
+    ///     Log.dbg("button clicked, mouseButton: {0}", e.MouseButton);
     /// };
     /// </code>
     /// </example>
@@ -286,7 +286,7 @@ namespace ConnectedLivingSpace
     /// <code>
     /// IButton button = ...
     /// button.OnMouseEnter += (e) => {
-    ///     Debug.Log("mouse entered button");
+    ///     Log.dbg("mouse entered button");
     /// };
     /// </code>
     /// </example>
@@ -299,7 +299,7 @@ namespace ConnectedLivingSpace
     /// <code>
     /// IButton button = ...
     /// button.OnMouseLeave += (e) => {
-    ///     Debug.Log("mouse left button");
+    ///     Log.dbg`("mouse left button");
     /// };
     /// </code>
     /// </example>

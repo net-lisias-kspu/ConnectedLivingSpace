@@ -81,7 +81,7 @@ namespace ConnectedLivingSpace
       }
       catch (Exception ex)
       {
-        Debug.Log($"CLS rebuild Vessel Error:  { ex}");
+        Log.error(ex, "CLS rebuild Vessel Error");
       }
     }
 
