@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+
+using UnityEngine;
+
 using KSP.Localization;
 using KSP.UI.Screens;
 using KSP.UI.Screens.Flight.Dialogs;
-using UnityEngine;
+
+using Asset = KSPe.IO.Data<ConnectedLivingSpace.Startup>;
+using Data = KSPe.IO.Data<ConnectedLivingSpace.Startup>;
 
 namespace ConnectedLivingSpace
 {
@@ -33,8 +37,6 @@ namespace ConnectedLivingSpace
     public static bool EnablePassable = false;
     public static bool EnableBlizzyToolbar = false;
     private static bool _prevEnableBlizzyToolbar = false;
-    private static string _settingsPath;
-    private static string _settingsFile;
 
     // this var is now restricted to use by the CLS window.  Highlighting will be handled by part.
     internal static int WindowSelectedSpace = -1;
@@ -193,8 +195,6 @@ namespace ConnectedLivingSpace
     public void Start()
     {
       Log.dbg("CLSAddon:Start");
-      _settingsPath = $"{KSPUtil.ApplicationRootPath}GameData/ConnectedLivingSpace/Plugins/PluginData";
-      _settingsFile = $"{_settingsPath}/cls_settings.dat";
 
       _windowStyle = new GUIStyle(HighLogic.Skin.window);
 
@@ -660,7 +660,7 @@ namespace ConnectedLivingSpace
     {
       if (_settings == null)
         loadSettings();
-      ConfigNode toolbarNode = _settings.HasNode("clsSettings") ? _settings.GetNode("clsSettings") : _settings.AddNode("clsSettings");
+      ConfigNode toolbarNode = _settings;
       if (toolbarNode.HasValue("enableBlizzyToolbar"))
         EnableBlizzyToolbar = bool.Parse(toolbarNode.GetValue("enableBlizzyToolbar"));
       _windowPosition = getRectangle(toolbarNode, "windowPosition", _windowPosition);
@@ -670,16 +670,25 @@ namespace ConnectedLivingSpace
 
     }
 
+    private readonly Data.ConfigNode data = Data.ConfigNode.For("clsSettings");
     private ConfigNode loadSettings()
     {
-      return _settings ?? (_settings = ConfigNode.Load(_settingsFile) ?? new ConfigNode());
+      Asset.ConfigNode template = Asset.ConfigNode.For("clsSettings");
+      if (!data.IsLoadable)
+      {
+        _settings = template.IsLoadable ? template.Load().Node : new ConfigNode();
+        _settings.name = "clsSettings";
+        data.Clear();
+        data.Save(_settings);
+      }
+      return _settings = data.Load().Node; // Now it's loadable.
     }
 
     private void saveSettings()
     {
-      if (_settings == null)
-        _settings = loadSettings();
-      ConfigNode toolbarNode = _settings.HasNode("clsSettings") ? _settings.GetNode("clsSettings") : _settings.AddNode("clsSettings");
+      _settings = _settings ?? loadSettings();
+      //ConfigNode toolbarNode = _settings.HasNode("clsSettings") ? _settings.GetNode("clsSettings") : _settings.AddNode("clsSettings");
+      ConfigNode toolbarNode = _settings;
       if (toolbarNode.HasValue("enableBlizzyToolbar"))
         toolbarNode.RemoveValue("enableBlizzyToolbar");
       toolbarNode.AddValue("enableBlizzyToolbar", EnableBlizzyToolbar.ToString());
@@ -687,9 +696,7 @@ namespace ConnectedLivingSpace
       WriteRectangle(toolbarNode, "windowOptionsPosition", _windowOptionsPosition);
       WriteValue(toolbarNode, "enableBlizzyToolbar", EnableBlizzyToolbar);
       WriteValue(toolbarNode, "enablePassable", EnablePassable);
-      if (!Directory.Exists(_settingsPath))
-        Directory.CreateDirectory(_settingsPath);
-      _settings.Save(_settingsFile);
+      data.Save();
     }
 
     private static Rect getRectangle(ConfigNode WindowsNode, string RectName, Rect defaultvalue)
