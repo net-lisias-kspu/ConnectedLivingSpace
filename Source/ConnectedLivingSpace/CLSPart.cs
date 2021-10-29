@@ -11,7 +11,7 @@
 
 	Connected Living Space /L Unleashed is distributed in the hope that
 	it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-	warranty of	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 */
 using System.Collections.Generic;

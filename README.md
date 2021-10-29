@@ -47,3 +47,7 @@ Please note the copyrights and trademarks in [NOTICE](./NOTICE).
 * [codepoet](https://forum.kerbalspaceprogram.com/index.php?/profile/73449-codepoet/) ROOT
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/63673-*)
 	+ [Github](https://github.com/codepoetpbowden/ConnectedLivingSpace)
+
+Contains code merged from:
+
+* [grokkingit](https://github.com/grokkingit)'s [ConnectedLivingSpace repo](https://github.com/grokkingit/ConnectedLivingSpace.git)
