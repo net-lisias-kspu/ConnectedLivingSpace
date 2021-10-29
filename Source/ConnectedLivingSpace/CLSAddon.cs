@@ -25,8 +25,13 @@ using KSP.Localization;
 using KSP.UI.Screens;
 using KSP.UI.Screens.Flight.Dialogs;
 
+using GUI = KSPe.UI.GUI;
+using GUILayout = KSPe.UI.GUILayout;
+
 using Asset = KSPe.IO.Data<ConnectedLivingSpace.Startup>;
 using Data = KSPe.IO.Data<ConnectedLivingSpace.Startup>;
+
+using Toolbar = KSPe.UI.Toolbar;
 
 namespace ConnectedLivingSpace
 {
@@ -52,14 +57,12 @@ namespace ConnectedLivingSpace
     private static bool _backupAllowUnrestrictedTransfers = false; // this value is used to "remember" the actual setting in CLS in the event it was changed by another mod
     public static bool EnablePassable = false;
     public static bool EnableBlizzyToolbar = false;
-    private static bool _prevEnableBlizzyToolbar = false;
 
     // this var is now restricted to use by the CLS window.  Highlighting will be handled by part.
     internal static int WindowSelectedSpace = -1;
 
     // applauncher/toolbar
-    private static ApplicationLauncherButton _stockToolbarButton; // Stock Toolbar Button
-    internal static IButton BlizzyToolbarButton; // Blizzy Toolbar Button
+    private Toolbar.Button toolbarButton; // Blizzy Toolbar Button
 
     // Localization
     internal static Dictionary<string, string> CLSTags;
@@ -193,19 +196,16 @@ namespace ConnectedLivingSpace
       {
         // Let't try to use Blizzy's toolbar
         Log.dbg("CLSAddon.Awake - Blizzy Toolbar Selected.");
-        if (ActivateBlizzyToolBar()) return;
         // We failed to activate the toolbar, so revert to stock
         Log.dbg("CLSAddon.Awake - Stock Toolbar Selected.");
-        GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
-        GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
       }
       else
       {
         // Use stock Toolbar
         Log.dbg("CLSAddon.Awake - Stock Toolbar Selected.");
-        GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
-        GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
       }
+
+      this.RegisterToolbar();
     }
 
     public void Start()
@@ -252,8 +252,6 @@ namespace ConnectedLivingSpace
     public void Update()
     {
       Log.dbgOnce("CLSAddon:Update");
-      if (HighLogic.LoadedSceneIsEditor || HighLogic.LoadedSceneIsFlight)
-        CheckForToolbarTypeToggle();
     }
 
     public void OnDestroy()
@@ -279,12 +277,7 @@ namespace ConnectedLivingSpace
       GameEvents.onCrewTransferSelected.Remove(OnCrewTransferSelected);
 
       // Remove the stock toolbar button
-      GameEvents.onGUIApplicationLauncherReady.Remove(OnGUIAppLauncherReady);
-      GameEvents.onGUIApplicationLauncherDestroyed.Remove(OnGUIAppLauncherDestroyed);
-      if (_stockToolbarButton != null)
-      {
-        ApplicationLauncher.Instance.RemoveModApplication(_stockToolbarButton);
-      }
+      ToolbarController.Instance.Destroy();
     }
     #endregion Life Cycle
 
@@ -569,28 +562,6 @@ namespace ConnectedLivingSpace
     #endregion Crew Transfer Restriction
 
     #region Toolbar Functionality
-    void OnGUIAppLauncherReady()
-    {
-      _stockToolbarButton = ApplicationLauncher.Instance.AddModApplication(
-          OnCLSButtonToggle,
-          OnCLSButtonToggle,
-          DummyVoid,
-          DummyVoid,
-          DummyVoid,
-          DummyVoid,
-          ApplicationLauncher.AppScenes.VAB | ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.FLIGHT,
-          Assets.cls_icon_off_128
-          );
-    }
-
-    void OnGUIAppLauncherDestroyed()
-    {
-      if (_stockToolbarButton == null) return;
-      ApplicationLauncher.Instance.RemoveModApplication(_stockToolbarButton);
-      _stockToolbarButton = null;
-    }
-
-    private static void DummyVoid() { }
 
     internal void OnCLSButtonToggle()
     {
@@ -600,71 +571,27 @@ namespace ConnectedLivingSpace
       if (!WindowVisable && null != _vessel)
         _vessel.Highlight(false);
 
-      if (EnableBlizzyToolbar)
-        BlizzyToolbarButton.TexturePath = WindowVisable ? Assets.cls_b_icon_on : Assets.cls_b_icon_off;
-      else
-        _stockToolbarButton.SetTexture(WindowVisable ? Assets.cls_icon_on_128 : Assets.cls_icon_off_128);
+      this.toolbarButton.Active = WindowVisable;
     }
 
-    internal bool ActivateBlizzyToolBar()
+    internal void RegisterToolbar()
     {
-      if (!EnableBlizzyToolbar) return false;
-      try
-      {
-        if (!ToolbarManager.ToolbarAvailable) return false;
-        if (HighLogic.LoadedScene != GameScenes.EDITOR && HighLogic.LoadedScene != GameScenes.FLIGHT) return true;
-        BlizzyToolbarButton = ToolbarManager.Instance.add("ConnectedLivingSpace", "ConnectedLivingSpace");
-        BlizzyToolbarButton.TexturePath = Assets.cls_b_icon_on;
-        BlizzyToolbarButton.ToolTip = _clsLocTitle; // "Connected Living Space";
-        BlizzyToolbarButton.Visible = true;
-        BlizzyToolbarButton.OnClick += (e) =>
-        {
-          OnCLSButtonToggle();
-        };
-        return true;
-      }
-      catch
-      {
-        // Blizzy Toolbar instantiation error.  ignore.
-        return false;
-      }
+      this.toolbarButton = Toolbar.Button.Create(this
+          , ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.VAB | ApplicationLauncher.AppScenes.FLIGHT
+          , Assets.cls_icon_on_128, Assets.cls_icon_off_128
+          , Assets.cls_b_icon_on, Assets.cls_b_icon_off
+          , _clsLocTitle
+        );
+
+      this.toolbarButton.Toolbar.Add(
+          Toolbar.Button.ToolbarEvents.Kind.Active,
+          new Toolbar.Button.Event (this.OnCLSButtonToggle, this.OnCLSButtonToggle)
+        );
+
+      ToolbarController.Instance.Add(toolbarButton);
+      ToolbarController.Instance.BlizzyActive(EnableBlizzyToolbar);
     }
 
-    private void CheckForToolbarTypeToggle()
-    {
-      if (EnableBlizzyToolbar && !_prevEnableBlizzyToolbar)
-      {
-        // Let't try to use Blizzy's toolbar
-        if (!ActivateBlizzyToolBar())
-        {
-          // We failed to activate the toolbar, so revert to stock
-          GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
-          GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
-
-          EnableBlizzyToolbar = _prevEnableBlizzyToolbar;
-        }
-        else
-        {
-          OnGUIAppLauncherDestroyed();
-          GameEvents.onGUIApplicationLauncherReady.Remove(OnGUIAppLauncherReady);
-          GameEvents.onGUIApplicationLauncherDestroyed.Remove(OnGUIAppLauncherDestroyed);
-          _prevEnableBlizzyToolbar = EnableBlizzyToolbar;
-          if (HighLogic.LoadedSceneIsFlight)
-            BlizzyToolbarButton.Visible = true;
-        }
-
-      }
-      else if (!EnableBlizzyToolbar && _prevEnableBlizzyToolbar)
-      {
-        // Use stock Toolbar
-        if (HighLogic.LoadedSceneIsFlight)
-          BlizzyToolbarButton.Visible = false;
-        GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
-        GameEvents.onGUIApplicationLauncherDestroyed.Add(OnGUIAppLauncherDestroyed);
-        OnGUIAppLauncherReady();
-        _prevEnableBlizzyToolbar = EnableBlizzyToolbar;
-      }
-    }
     #endregion Toolbar Functionality
 
     #region Settings
@@ -1038,14 +965,9 @@ namespace ConnectedLivingSpace
         onSettingsChanged();
       }
 
-      // Blizzy Toolbar?
-      if (ToolbarManager.ToolbarAvailable)
-        GUI.enabled = true;
-      else
-      {
-        GUI.enabled = false;
-        EnableBlizzyToolbar = false;
-      }
+      GUI.enabled = true;
+      EnableBlizzyToolbar = false;
+
       EnableBlizzyToolbar = GUILayout.Toggle(EnableBlizzyToolbar, _clsLocBlizzy); // "Use Blizzy's Toolbar instead of Stock"
 
       GUI.enabled = true;

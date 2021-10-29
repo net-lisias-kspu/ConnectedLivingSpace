@@ -24,13 +24,18 @@ namespace ConnectedLivingSpace
 {
   internal static class Assets
   {
+		private const string assets = "assets";
+
     private static UTexture2D _cls_icon_off_128;
-    internal static UTexture2D cls_icon_off_128 => _cls_icon_off_128 ?? (_cls_icon_off_128 = Asset.Texture2D.LoadFromFile("assets", "cls_icon_off_128"));
+    internal static UTexture2D cls_icon_off_128 => _cls_icon_off_128 ?? (_cls_icon_off_128 = Asset.Texture2D.LoadFromFile(assets, "cls_icon_off_128"));
 
     private static UTexture2D _cls_icon_on_128;
-    internal static UTexture2D cls_icon_on_128 => _cls_icon_on_128 ?? (_cls_icon_on_128 = Asset.Texture2D.LoadFromFile("assets", "cls_icon_on_128"));
+    internal static UTexture2D cls_icon_on_128 => _cls_icon_on_128 ?? (_cls_icon_on_128 = Asset.Texture2D.LoadFromFile(assets, "cls_icon_on_128"));
 
-    internal static readonly String cls_b_icon_on = IO.Solve("assets", "cls_b_icon_on");
-    internal static readonly string cls_b_icon_off = IO.Solve("assets", "cls_b_icon_off");
+    private static UTexture2D _cls_b_icon_on;
+    internal static UTexture2D cls_b_icon_on => _cls_b_icon_on ?? (_cls_b_icon_on = Asset.Texture2D.LoadFromFile(assets, "cls_b_icon_on"));
+
+    private static UTexture2D _cls_b_icon_off;
+    internal static UTexture2D cls_b_icon_off => _cls_b_icon_off ?? (_cls_b_icon_off = Asset.Texture2D.LoadFromFile(assets, "cls_b_icon_off"));
   }
 }

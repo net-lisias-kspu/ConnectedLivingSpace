@@ -15,6 +15,8 @@
 
 */
 using UnityEngine;
+using GUI = KSPe.UI.GUI;
+using GUILayout = KSPe.UI.GUILayout;
 
 namespace ConnectedLivingSpace
 {
