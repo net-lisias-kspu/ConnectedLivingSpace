@@ -45,10 +45,10 @@ Global
 		$2.scope = text/x-csharp
 		$0.TextStylePolicy = $3
 		$3.FileWidth = 132
-		$3.TabsToSpaces = True
-		$3.NoTabsAfterNonTabs = True
 		$3.EolMarker = Unix
 		$3.scope = text/plain
+		$3.TabWidth = 2
+		$3.IndentWidth = 2
 		$0.StandardHeader = $4
 	EndGlobalSection
 EndGlobal

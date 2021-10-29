@@ -1,4 +1,4 @@
-# ConnectedLivingSpace :: Change Log
+# ConnectedLivingSpace /L Unleashed :: Change Log
 
 * 2020-0220: 2.0.0.7 (LisiasT) for KSP >= 1.4
 	+ Backporting the thing to every KSP since 1.4.0

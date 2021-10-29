@@ -1,8 +1,8 @@
-# Connected Living Spaces  /L Unofficial
+# Connected Living Spaces  /L Unleashed
 
 Connected Living Space identifies areas within a vessel that can be crewed by Kerbals and through which Kerbals can pass internally to reach other parts that can be crewed.
 
-Unofficial fork by Lisias.
+[Unleashed](https://ksp.lisias.net/add-ons-unleashed/) fork by Lisias.
 
 
 ## In a Hurry
