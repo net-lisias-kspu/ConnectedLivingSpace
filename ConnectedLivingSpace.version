@@ -1,5 +1,5 @@
 {
-	"NAME"		: "ConnectedLivingSpace /L Unofficial",
+	"NAME"		: "ConnectedLivingSpace /L Unleashed",
 	"URL"		: "https://raw.githubusercontent.com/net-lisias-kspu/ConnectedLivingSpace/master/ConnectedLivingSpace.version",
 	"DOWNLOAD"	: "https://github.com/net-lisias-kspu/ConnectedLivingSpace/releases",
 	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-kspu/ConnectedLivingSpace/CHANGE_LOG.md",
@@ -8,7 +8,7 @@
 		"MAJOR":2,
 		"MINOR":0,
 		"PATCH":0,
-		"BUILD":7
+		"BUILD":8
 		},
 	"KSP_VERSION_MIN":{
 		"MAJOR":1,

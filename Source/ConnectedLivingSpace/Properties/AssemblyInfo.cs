@@ -34,5 +34,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion(ConnectedLivingSpace.Version.Number)]
 [assembly: AssemblyFileVersion(ConnectedLivingSpace.Version.Number)]
 [assembly: KSPAssembly("ConnectedLivingSpace", KSPe.Version.major, KSPe.Version.minor)]
-[assembly: KSPAssemblyDependency("KSPe", 2, 2)]
-[assembly: KSPAssemblyDependency("KSPe.UI", 2, 2)]
+[assembly: KSPAssemblyDependency("KSPe", 2, 4)]
+[assembly: KSPAssemblyDependency("KSPe.UI", 2, 4)]

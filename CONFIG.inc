@@ -6,13 +6,13 @@ TARGETDIR="net.lisias.ksp/$PACKAGE"
 TARGETBINDIR="$TARGETDIR/"
 PROJECTSDIR="$PACKAGE/"
 
-DLLS="${PACKAGE} CLSInterfaces"
+DLLS="${PACKAGE}"
 PD_DLLS=""
 declare -A PD_SUB_RULES=( )
 PD_SUB_DLLS=`{ for K in "${!PD_SUB_RULES[@]}"; do echo $(basename ${PD_SUB_RULES[$K]}); done } | sort -u | tr '\n' ' '`
 PD_SUB_DIRS=`{ for K in "${!PD_SUB_RULES[@]}"; do echo $(dirname ${PD_SUB_RULES[$K]}); done } | sort -u | tr '\n' ' '`
-GD_DLLS=""
-GD_PRIORITY="000"
+GD_DLLS="CLSInterfaces"
+GD_PRIORITY="999"
 LIB_DLLS="${DLLS}"
 
 PROJECT_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
